@@ -43,6 +43,7 @@
 			<br>
 		</form>
 		</div>
+		<%@ include file="../common/bottom_footer.jsp" %>
 	<script>
 		function searchId(){
 			var name = $('#searchName');

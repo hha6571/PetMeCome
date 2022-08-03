@@ -40,6 +40,7 @@
 				<input type="button" id="back"  value="취소"  onclick="location.href='javascript:history.back();'">
 		</div>
 		</form>
+		<%@ include file="../common/bottom_footer.jsp" %>
 		<script>
 			function send(){
 				var userPwd = $('#userPwd').val();

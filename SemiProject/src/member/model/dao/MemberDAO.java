@@ -236,7 +236,7 @@ public class MemberDAO {
 			rset = pstmt.executeQuery();
 			
 			while(rset.next()) {
-				list.add(new Board(rset.getInt("BOARD_NO"),
+				list.add(new Board(rset.getInt("BOARD_ID"),
 							rset.getString("BOARD_TITLE"),
 							rset.getString("BOARD_CONTENT"),
 							rset.getInt("VIEWS"),

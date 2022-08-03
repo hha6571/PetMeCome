@@ -89,6 +89,7 @@
 			</div>
 		</form>
 		</div>
+		<%@ include file="../common/bottom_footer.jsp" %>
 		<script>
 		var isUsable = false;
 		var isIdChecked = false;

@@ -58,10 +58,11 @@
 		</tr>
 		</table>
 		<div class="myPageBtns" align="center">
-				<input id="updateBtn" type="submit" value="수정하기" onclick = UpdateSuccess();>
+				<input id="updateBtn" type="submit" value="수정하기" onclick = "UpdateSuccess();">
 				<input type="button" id="cancelBtn" onclick="location.href='javascript:history.go(-1)'" value="취소하기">
 			</div>
 		</form>
+		<%@ include file="../common/bottom_footer.jsp" %>
 		<script>
 			function UpdateSuccess(){
 				alert('회원 정보가 수정되었습니다.');

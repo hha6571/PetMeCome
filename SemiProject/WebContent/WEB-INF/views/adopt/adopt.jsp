@@ -59,9 +59,9 @@
             	<div class="gall_box col-sm-6 col-md-4 col-lg-3">
 					<div class="gall_con">
 						<div class="gall_img">
-						<% for(int j=0; j<pList.size(); j++) { %>
-							<% Attachment p = pList.get(j); %>
+							<% Attachment p = pList.get(i); %>
 							<% if(p.getFileLevel() == 1) { %>
+
 							<a><img src="<%= request.getContextPath() %>/adopt_images/<%= p.getChangeName() %>"></a>
 							<span hidden name="petId" id="petId"><%= a.getPetId() %></span>
 						</div>
@@ -83,7 +83,6 @@
 						<% } %>
 				<% } %>
 				</form>
-			<% } %>
 			</div>
 						<script>
 							$(function(){ 
@@ -99,6 +98,7 @@
 							</script>
 							               		<br>
                		<br>
+               		
 		<div class="pagingArea" align="center">
 			<!-- 맨 처음으로 -->
 			<button onclick="location.href='<%=request.getContextPath()%>/list.ad?currentPage=1'">&lt;&lt;</button>
@@ -110,7 +110,7 @@
 				}
 			</script>
 			<!-- 숫자 페이지로 -->
-			<% for(int p = api.getStartPage(); p<api.getEndPage(); p++){ %>
+			<% for(int p = api.getStartPage(); p<= api.getEndPage(); p++){ %>
 				<%if(p== api.getCurrentPage()){ %>
 					<button id="choosen" disabled><%=p %></button>
 				<% }else { %>
@@ -127,10 +127,13 @@
 			<!-- 맨 뒤로 -->
 			<button onclick="location.href='<%=request.getContextPath()%>/list.ad?currentPage=<%=api.getMaxPage()%>'">&gt;&gt;</button>
 		</div>
-                		<% if(loginUser.getManage().equals("Y")) { %>
+		
+               <% if(loginUser.getManage().equals("Y")) { %>
                 <div class="addBtn" align="right">
                			<a href="<%= request.getContextPath() %>/insertForm.ad" class="insertAdopt">등록하기</a>
                	</div>
+               			<% } else { %>
+               			<a></a>
                			<% } %>
         </div>
      </section>   

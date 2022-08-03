@@ -177,8 +177,18 @@ h4 {
       width: 70px; 
       height:70px;
       }
+      
+      #modalshow:hover {
+	cursor: pointer;
+}
+      #modalshow2:hover {
+	cursor: pointer;
+}
 </style>
 <body class="homepage">
+<br>
+<br>
+<br>
     <section id="bottom">
         <div class="container fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
             <div class="row">

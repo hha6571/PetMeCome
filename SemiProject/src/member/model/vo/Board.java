@@ -3,7 +3,7 @@ package member.model.vo;
 import java.sql.Date;
 
 public class Board {
-	private int boardNo;
+	private int boardId;
 	private String boardTitle;
 	private String boardContent;
 	private int views;
@@ -15,10 +15,10 @@ public class Board {
 	
 	public Board() {}
 
-	public Board(int boardNo, String boardTitle, String boardContent, int views, Date createDate, Date modifyDate,
+	public Board(int boardId, String boardTitle, String boardContent, int views, Date createDate, Date modifyDate,
 			String status, String writer, int cateId) {
 		super();
-		this.boardNo = boardNo;
+		this.boardId = boardId;
 		this.boardTitle = boardTitle;
 		this.boardContent = boardContent;
 		this.views = views;
@@ -29,12 +29,12 @@ public class Board {
 		this.cateId = cateId;
 	}
 
-	public int getBoardNo() {
-		return boardNo;
+	public int getBoardId() {
+		return boardId;
 	}
 
-	public void setBoardNo(int boardNo) {
-		this.boardNo = boardNo;
+	public void setBoardId(int boardId) {
+		this.boardId = boardId;
 	}
 
 	public String getBoardTitle() {
@@ -103,7 +103,7 @@ public class Board {
 
 	@Override
 	public String toString() {
-		return "Board [boardNo=" + boardNo + ", boardTitle=" + boardTitle + ", boardContent=" + boardContent
+		return "Board [boardId=" + boardId + ", boardTitle=" + boardTitle + ", boardContent=" + boardContent
 				+ ", views=" + views + ", createDate=" + createDate + ", modifyDate=" + modifyDate + ", status="
 				+ status + ", writer=" + writer + ", cateId=" + cateId + "]";
 	}

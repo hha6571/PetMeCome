@@ -44,6 +44,7 @@
 			</div>
 		</form>
 		</div>
+		<%@ include file="../common/bottom_footer.jsp" %>
 		<script>
 		function validate(){
 			var id = $('#userId');

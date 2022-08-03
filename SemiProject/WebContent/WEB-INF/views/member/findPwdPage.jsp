@@ -49,6 +49,7 @@
 			<br>
 		</form>
 		</div>
+		<%@ include file="../common/bottom_footer.jsp" %>
 	<script>
 		var isIdChecked = false;
 		var isNameChecked = false;

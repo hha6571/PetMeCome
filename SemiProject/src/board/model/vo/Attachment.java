@@ -12,12 +12,12 @@ public class Attachment {
 	private int fileLevel;
 	private int downloadCount;
 	private String status;
-	private int pet_id;
+	private int petId;
 	
 	public Attachment() {}
 
 	public Attachment(int fileId, int boardId, String originName, String changeName, String filePath, Date uploadDate,
-			int fileLevel, int downloadCount, String status, int pet_id) {
+			int fileLevel, int downloadCount, String status, int petId) {
 		super();
 		this.fileId = fileId;
 		this.boardId = boardId;
@@ -28,7 +28,7 @@ public class Attachment {
 		this.fileLevel = fileLevel;
 		this.downloadCount = downloadCount;
 		this.status = status;
-		this.pet_id = pet_id;
+		this.petId = petId;
 	}
 
 	public int getFileId() {
@@ -103,19 +103,19 @@ public class Attachment {
 		this.status = status;
 	}
 
-	public int getPet_id() {
-		return pet_id;
+	public int getPetId() {
+		return petId;
 	}
 
-	public void setPet_id(int pet_id) {
-		this.pet_id = pet_id;
+	public void setPetId(int petId) {
+		this.petId = petId;
 	}
 
 	@Override
 	public String toString() {
 		return "Attachment [fileId=" + fileId + ", boardId=" + boardId + ", originName=" + originName + ", changeName="
 				+ changeName + ", filePath=" + filePath + ", uploadDate=" + uploadDate + ", fileLevel=" + fileLevel
-				+ ", downloadCount=" + downloadCount + ", status=" + status + ", pet_id=" + pet_id + "]";
+				+ ", downloadCount=" + downloadCount + ", status=" + status + ", pet_id=" + petId + "]";
 	}
 	
 	

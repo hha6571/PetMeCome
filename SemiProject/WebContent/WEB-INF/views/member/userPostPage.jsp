@@ -2,7 +2,6 @@
     pageEncoding="UTF-8" import="java.util.ArrayList, member.model.vo.*"%>
     <%
       	ArrayList<Board> list = (ArrayList<Board>)request.getAttribute("list"); 
-    
 	 %>
 <!DOCTYPE html>
 <html>
@@ -29,14 +28,14 @@
 	<h2>내 정보 보기</h2>
 	<br>
 	<div class="select">
-	<input type="checkbox" id="userInfoPage" name="userInfo" onclick="location.href='<%=request.getContextPath() %>/myPage.pm'"><label for="userInfo">내 정보</label>
+	<input type="checkbox" id="userInfoPage" name="userInfo" onclick="location.assign(<%=request.getContextPath() %>/myPage.pm);"><label for="userInfo">내 정보</label>
 	<input type="checkbox" id="userBoard" name="userBoard" checked="checked" ><label for="userBoard">작성글</label>
 	<input type="checkbox" id="userReply" name="userReply" onclick="location.href='<%= request.getContextPath() %>/userReplyForm.pm'"><label for="userReply">작성댓글</label>
 	</div>
 	<br>
 	<br>
-	<div>
-	<table>
+	<div class="postTable">
+	<table class="posttable">
 		<tr>
 			<th style="width:250px; height: 70px; font-size: 16px; text-align: center;">글번호</th>
 			<th style="width:300px; height: 70px; font-size: 16px; text-align: center;">제목</th>
@@ -48,16 +47,25 @@
 			</tr>
 			<% }else{ %>
 			<% for(Board b : list){%> 
-				
 				<tr>
-		 			<td><%=b.getBoardNo()%></td> 
+		 			<td><%=b.getBoardId()%></td> 
 		 			<td><%=b.getBoardTitle() %></td>
 		 			<td><%=b.getCreateDate() %></td>
-		 			<td><button id="delete">삭제</button></td>
-				</tr>
+		 			<td><button class="delete" value="<%= b.getBoardId() %>">삭제</button></td>
+		 		</tr>
 		<%	} %> 
 		<%	} %> 
 	</table>
 	</div>
+		<script>
+		$('.posttable').find('.delete').click(function(){
+			var bId = $(this).val();
+			console.log(bId);
+			if(confirm('정말 삭제하시겠습니까?')){
+			location.href="<%= request.getContextPath() %>/deletePost.bo?bId=" + bId;
+			}
+		 });
+		</script>
+	<%@ include file="../common/bottom_footer.jsp" %>
 	</body>
 	</html>

@@ -70,6 +70,7 @@
 				<input type="button" id="goMain" onclick="location.href='<%= request.getContextPath()%>'" value="메인으로">
 			</div>
 		</form>
+		<%@ include file="../common/bottom_footer.jsp" %>
 	<script>
 		function deleteMember(){
 			var bool = confirm('정말 탈퇴하시겠습니까?');

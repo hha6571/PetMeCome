@@ -41,5 +41,6 @@
 			</div>
 			<br>
 	</div>
+	<%@ include file="../common/bottom_footer.jsp" %>
 </body>
 </html>
