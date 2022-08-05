@@ -82,23 +82,16 @@
 											<% } %>
 						<% } %>
 				<% } %>
-				</form>
 			</div>
-						<script>
-							$(function(){ 
- 								$('.gall_img').mouseenter(function(){
-									$(this).css({'cursor' : 'pointer'});
- 								}).mouseout(function(){
-									$(this).parent().css('background','none');
-								}).click(function(){
-									var petId = $(this).children().eq(1).text();
-									location.href = "<%= request.getContextPath() %>/adoptInfo.ad?petId=" + petId;
-								});
-							});
-							</script>
-							               		<br>
+			
+					<br>
+			    <% if( loginUser !=null) { %>
+			    <input hidden id="showBtn" value="<%= loginUser.getManage() %>">
+                <div class="addBtn" align="right">
+               			<a href="<%= request.getContextPath() %>/insertForm.ad" class="insertAdopt">등록하기</a>
+               	</div>
+               			<% } %>
                		<br>
-               		
 		<div class="pagingArea" align="center">
 			<!-- 맨 처음으로 -->
 			<button onclick="location.href='<%=request.getContextPath()%>/list.ad?currentPage=1'">&lt;&lt;</button>
@@ -127,18 +120,30 @@
 			<!-- 맨 뒤로 -->
 			<button onclick="location.href='<%=request.getContextPath()%>/list.ad?currentPage=<%=api.getMaxPage()%>'">&gt;&gt;</button>
 		</div>
-		
-               <% if(loginUser.getManage().equals("Y")) { %>
-                <div class="addBtn" align="right">
-               			<a href="<%= request.getContextPath() %>/insertForm.ad" class="insertAdopt">등록하기</a>
-               	</div>
-               			<% } else { %>
-               			<a></a>
-               			<% } %>
         </div>
      </section>   
         <br>
 		<%@ include file="../common/bottom_footer.jsp" %>
+		<script>
+							$(function(){ 
+ 								$('.gall_img').mouseenter(function(){
+									$(this).css({'cursor' : 'pointer'});
+ 								}).mouseout(function(){
+									$(this).parent().css('background','none');
+								}).click(function(){
+									var petId = $(this).children().eq(1).text();
+									location.href = "<%= request.getContextPath() %>/adoptInfo.ad?petId=" + petId;
+								});
+ 								
+ 								
+ 								var userManage = $('#showBtn').val();
+ 								 if(userManage == 'Y'){
+ 									$('.addBtn').show();
+ 								 }else {
+ 									$('.addBtn').hide();
+ 								 }
+							});
+							</script>
 </body>
     <script src="js/jquery.js"></script>
     <script src="js/bootstrap.min.js"></script>

@@ -79,9 +79,9 @@
 
 			<br>
 				<div class="row" align="right">
-				<%-- <% if(loginUser != null){ %> --%>
+				<% if(loginUser != null){ %>
 					<a class="btn btn-primary" href="<%= request.getContextPath() %>/writeThumbForm.th">글쓰기</a>	
-				<%-- <% } %> --%>
+				<% } %>
 				</div>
 			<br>
 		</div>
