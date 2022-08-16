@@ -57,7 +57,7 @@
     input{border: none !important;}
     textarea{border: none !important;}
     label{font-size: 22px !important; color: #000;}
-    #content{font-size: 20px; padding: 15px; }
+    #content{font-size: 20px; padding: 15px; height: 500px; resize: none;}
     #title{font-size: 20px;}
     </style>
 </head>
